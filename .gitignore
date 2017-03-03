@@ -1,1 +1,4 @@
 # childRepository
+/childProject/bin
+/childProject/obj
+.suo
