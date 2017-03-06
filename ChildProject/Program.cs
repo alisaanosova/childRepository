@@ -11,6 +11,7 @@ namespace ChildProject
 		static void Main(string[] args)
 		{
 			//Privet detishce
+            //rabotaet?
 		}
 	}
 }
