@@ -66,7 +66,8 @@ namespace secondcalendar
                         sum = DayOfMounth(j, i);
                         if (i == endmonth && j == endyear)
                         {
-                            sum = DayOfMounth(endyear, endmonth) - endday;
+                            int info = DayOfMounth(endyear, endmonth) - endday;
+                            sum = DayOfMounth(endyear, endmonth) - info;
                         }
                         res1 += sum;
                     }
@@ -246,11 +247,7 @@ namespace secondcalendar
         public bool Leap(int year)
         {
             my = new MyClass();
-            bool test = leap(year);
-            if (test)
-                return true;
-            else
-                return false;
+            return leap(year);
         }
     }
     internal class Program
@@ -280,7 +277,7 @@ namespace secondcalendar
                         {
                             Console.WriteLine("If you want to know the number of days between dates write 'amount'.");
                             Console.WriteLine("If you want to know the number of days from the beginning of our era write 'era'");
-                            Console.WriteLine("if you want to arrange the dates in chronological order");
+                            Console.WriteLine("if you want to arrange the dates in chronological order write 'chrono'.");
                             Console.Write("Write what you need: ");
                             string answer2 = Console.ReadLine();
 
@@ -349,7 +346,6 @@ namespace secondcalendar
                                     bool test2 = my.isDateValue(endyear, endmonth, endday);
                                     if (test2)
                                     {
-                                        Console.WriteLine("Correct value");
                                         if (answer2 == "amount")
                                         {
                                             my.Сhronology(ref day, ref month, ref year, ref endday, ref endmonth, ref endyear);
@@ -370,6 +366,7 @@ namespace secondcalendar
                             else if (answer2 == "era")
                             {
                                 my.startDays(year, month, day, out res);
+                                Console.WriteLine(" {0}", res);
                             }
                             else
                             {
