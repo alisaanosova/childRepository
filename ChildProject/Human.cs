@@ -9,10 +9,13 @@ namespace ChildProject
 {
     class Human
     {
+        //добавь нижнее подчеркивание
         private string name;
         private string surname;
         private int age;
-
+        
+        //добавь конструктор без параметров, еще называется по-умолчанию
+        //типа имя будет анноун нарп и т.п.
         public Human(string name, string surname, int age)
         {
             this.name = name;
