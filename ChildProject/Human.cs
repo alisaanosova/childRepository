@@ -9,11 +9,11 @@ namespace ChildProject
 {
     class Human
     {
-        private object name;
-        private object surname;
-        private object age;
+        private string name;
+        private string surname;
+        private string age;
 
-        public Human(object name, object surname, object age)
+        public Human(string name, string surname, string age)
         {
             this.name = name;
             this.surname = surname;

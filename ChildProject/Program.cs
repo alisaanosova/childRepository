@@ -20,6 +20,8 @@ namespace secondcalendar
             {
                 int res;
                 CalendarActions my = new CalendarActions();
+                Calendar info = new Calendar();
+                
                 
 
                 Console.WriteLine("\r\n" + "if you want to perform actions with dates write 'act'.");
@@ -65,7 +67,7 @@ namespace secondcalendar
                                 testyear = int.TryParse(Console.ReadLine(), out year);
                             }
 
-                            int daycheck = my.DayOfMounth(year, month);
+                            int daycheck = info.DayOfMounth(year, month);
 
                             bool test1 = my.isDateValue(year, month, day);
 
@@ -99,7 +101,7 @@ namespace secondcalendar
                                         testendyear = int.TryParse(Console.ReadLine(), out endyear);
                                     }
 #endregion
-                                    daycheck = my.DayOfMounth(endyear, endmonth);
+                                    daycheck = info.DayOfMounth(endyear, endmonth);
 
                                     bool test2 = my.isDateValue(endyear, endmonth, endday);
                                     if (test2)
@@ -147,7 +149,7 @@ namespace secondcalendar
                                 testyear = int.TryParse(Console.ReadLine(), out year);
                             }
 
-                            bool test = my.Leap(year);
+                            bool test = info.Leap(year);
                             if (test)
                             {
                                 Console.WriteLine("{0} leap year.", year);

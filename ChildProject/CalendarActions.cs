@@ -8,6 +8,7 @@ namespace ChildProject
 {
     class CalendarActions
     {
+        Calendar info = new Calendar();
             public void СhangeСhronology(ref int day1, ref int month1, ref int year1, ref int day2, ref int month2,
                 ref int year2)
             {
@@ -61,11 +62,11 @@ namespace ChildProject
                     {
                         for (int i = 1; i <= endmonth; i++)
                         {
-                            sum = DayOfMounth(j, i);
+                            sum = info.DayOfMounth(j, i);
                             if (i == endmonth && j == endyear)
                             {
-                                int info = DayOfMounth(endyear, endmonth) - endday;
-                                sum = DayOfMounth(endyear, endmonth) - info;
+                                int dayres = info.DayOfMounth(endyear, endmonth) - endday;
+                                sum = info.DayOfMounth(endyear, endmonth) - dayres;
                             }
                             res1 += sum;
                         }
@@ -75,7 +76,7 @@ namespace ChildProject
                     {
                         for (int i = 0; i <= 12; i++)
                         {
-                            sum = DayOfMounth(j, i);
+                            sum = info.DayOfMounth(j, i);
                             res1 += sum;
                         }
                     }
@@ -103,17 +104,17 @@ namespace ChildProject
                             }
                             else if (i == month && j == year)
                             {
-                                sum = DayOfMounth(endyear, month) - startday;
+                                sum = info.DayOfMounth(endyear, month) - startday;
                             }
                             else if (i == endmonth && j == endyear)
                             {
-                                int info = DayOfMounth(endyear, endmonth) - endday;
-                                sum = DayOfMounth(endyear, endmonth) - info;
+                                int dayres = info.DayOfMounth(endyear, endmonth) - endday;
+                                sum = info.DayOfMounth(endyear, endmonth) - dayres;
                             }
 
                             else
                             {
-                                sum = DayOfMounth(year, i);
+                                sum = info.DayOfMounth(year, i);
                             }
                             res1 += sum;
                         }
@@ -125,12 +126,12 @@ namespace ChildProject
 
                             if (i == endmonth && j == endyear)
                             {
-                                int info = DayOfMounth(endyear, endmonth) - endday;
-                                sum = DayOfMounth(endyear, endmonth) - info;
+                                int dayres = info.DayOfMounth(endyear, endmonth) - endday;
+                                sum = info.DayOfMounth(endyear, endmonth) - dayres;
                             }
                             else
                             {
-                                sum = DayOfMounth(year, i);
+                                sum = info.DayOfMounth(year, i);
                             }
                             res1 += sum;
                         }
@@ -142,11 +143,11 @@ namespace ChildProject
                         {
                             if (i == month && j == year)
                             {
-                                sum = DayOfMounth(year, i) - startday;
+                                sum = info.DayOfMounth(year, i) - startday;
                             }
                             else
                             {
-                                sum = DayOfMounth(year, i);
+                                sum = info.DayOfMounth(year, i);
                             }
 
                             res1 += sum;
@@ -160,7 +161,7 @@ namespace ChildProject
 
             public bool isDateValue(int year, int month, int day)
             {
-                if (DayOfMounth(year, month) >= day && day > 0)
+                if (info.DayOfMounth(year, month) >= day && day > 0)
                 {
                     return true;
                 }
@@ -168,79 +169,7 @@ namespace ChildProject
 
             }
 
-            public int DayOfMounth(int year, int month)
-            {
-                switch (month)
-                {
-                    case 1:
-                        {
-                            return 31;
-                        }
-                    case 2:
-                        {
-                            bool test = Leap(year);
-                            if (test)
-                            {
-                                return 29;
-                            }
-                            return 28;
-                        }
-                    case 3:
-                        {
-                            return 31;
-                        }
-                    case 4:
-                        {
-                            return 30;
-                        }
-                    case 5:
-                        {
-                            return 31;
-                        }
-                    case 6:
-                        {
-                            return 30;
-                        }
-                    case 7:
-                        {
-                            return 31;
-                        }
-                    case 8:
-                        {
-                            return 31;
-                        }
-                    case 9:
-                        {
-                            return 30;
-                        }
-                    case 10:
-                        {
-                            return 31;
-                        }
-                    case 11:
-                        {
-                            return 30;
-                        }
-                    case 12:
-                        {
-                            return 31;
-                        }
-                    default:
-                        {
-                            return 0;
-                        }
-                }
-            }
-
-            public bool Leap(int year)
-            {
-                int god = year % 4;
-                if (god == 0)
-                {
-                    return true;
-                }
-                return false;
-            }
+            
 
         }
     }
