@@ -263,12 +263,10 @@ namespace secondcalendar
         static void Main(string[] args)
         {
             string globalAnswer;
-            Human name = new Human(Console.ReadLine());
-            Human surname = new Human(Console.ReadLine());
-            Human age = new Human(int.Parse(Console.ReadLine()));
-            Console.WriteLine(name.ToString());
-            Console.WriteLine(surname.ToString());
-            Console.WriteLine(age.ToString());
+            Human human = new Human(Console.ReadLine(), Console.ReadLine(),Console.ReadLine());
+            Console.WriteLine(human.Name());
+            Console.WriteLine(human.Surname());
+            Console.WriteLine(human.Age());
             do
             {
                 int res;
