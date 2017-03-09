@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ChildProject;
 
 namespace secondcalendar
 {
@@ -262,10 +263,17 @@ namespace secondcalendar
         static void Main(string[] args)
         {
             string globalAnswer;
+            Human name = new Human(Console.ReadLine());
+            Human surname = new Human(Console.ReadLine());
+            Human age = new Human(int.Parse(Console.ReadLine()));
+            Console.WriteLine(name.ToString());
+            Console.WriteLine(surname.ToString());
+            Console.WriteLine(age.ToString());
             do
             {
                 int res;
                 MyClass my = new MyClass();
+                
 
                 Console.WriteLine("\r\n" + "if you want to perform actions with dates write 'act'.");
                 Console.WriteLine("If you want to know whether a leap year write  'leap'");
@@ -273,7 +281,10 @@ namespace secondcalendar
                 string answer = Console.ReadLine();
                 switch (answer)
                 {
+                    
                     case "act":
+                        #region actions
+                        #region enter values
                         {
                             Console.WriteLine("If you want to know the number of days between dates write 'amount'.");
                             Console.WriteLine("If you want to know the number of days from the beginning of our era write 'era'");
@@ -340,7 +351,7 @@ namespace secondcalendar
                                         Console.Write("Incorret value! Try again: ");
                                         testendyear = int.TryParse(Console.ReadLine(), out endyear);
                                     }
-
+#endregion
                                     daycheck = my.DayOfMounth(endyear, endmonth);
 
                                     bool test2 = my.isDateValue(endyear, endmonth, endday);
@@ -376,7 +387,9 @@ namespace secondcalendar
 
                             break;
                         }
+#endregion
                     case "leap":
+#region leap year
                         {
                             Console.Write("Enter year: ");
                             int year;
@@ -401,6 +414,7 @@ namespace secondcalendar
                         }
 
                 }
+#endregion
                 Console.Write("\r\n" + "Try again? y/n;");
                 globalAnswer = Console.ReadLine();
             }
