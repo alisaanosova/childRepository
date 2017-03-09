@@ -178,7 +178,7 @@ namespace ChildProject
                         }
                     case 2:
                         {
-                            bool test = leap(year);
+                            bool test = Leap(year);
                             if (test)
                             {
                                 return 29;
@@ -232,7 +232,7 @@ namespace ChildProject
                 }
             }
 
-            private bool leap(int year)
+            public bool Leap(int year)
             {
                 int god = year % 4;
                 if (god == 0)
@@ -242,10 +242,6 @@ namespace ChildProject
                 return false;
             }
 
-            public bool Leap(int year)
-            {
-                return leap(year);
-            }
         }
     }
 

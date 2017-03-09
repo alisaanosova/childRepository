@@ -21,19 +21,9 @@ namespace ChildProject
 
         }
 
-        public string Name()
+        public override string ToString()
         {
-            return ToString() + ": " + name;
-
-        }
-        public string Surname()
-        {
-            return ToString() + ": " + surname;
-
-        }
-        public string Age()
-        {
-            return ToString() + ": " + age;
+            return $" Name: {name},\r\n Surname: {surname},\r\n Age: {age}";
 
         }
         

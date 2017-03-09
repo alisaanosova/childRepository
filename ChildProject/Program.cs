@@ -10,20 +10,12 @@ namespace secondcalendar
     
     internal class Program
     {
-        //дей инфо убери, он тут не нужен, у тебя есть отдельный метод для проверки сколько дней в месяце, это чуть матрешка выходит
-        //и назови что-то типа изДейтВалид потому что неонятно что делает метод
-        //и еще важно. привыкай называть методы всегда с большой буквы
-        //еще надо чекнуть перед этим всем адекватен ли год, вдруг он меньше нуля. хотя, если считать что это типа до н.э.)
-
-
 
         static void Main(string[] args)
         {
             string globalAnswer;
             Human human = new Human(Console.ReadLine(), Console.ReadLine(),Console.ReadLine());
-            Console.WriteLine(human.Name());
-            Console.WriteLine(human.Surname());
-            Console.WriteLine(human.Age());
+            Console.WriteLine(human.ToString());
             do
             {
                 int res;
