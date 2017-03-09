@@ -14,7 +14,7 @@ namespace secondcalendar
         static void Main(string[] args)
         {
             string globalAnswer;
-            Human human = new Human(Console.ReadLine(), Console.ReadLine(),Console.ReadLine());
+            Human human = new Human(Console.ReadLine(), Console.ReadLine(),int.Parse(Console.ReadLine()));
             Console.WriteLine(human.ToString());
             do
             {

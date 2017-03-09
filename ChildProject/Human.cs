@@ -11,9 +11,9 @@ namespace ChildProject
     {
         private string name;
         private string surname;
-        private string age;
+        private int age;
 
-        public Human(string name, string surname, string age)
+        public Human(string name, string surname, int age)
         {
             this.name = name;
             this.surname = surname;
