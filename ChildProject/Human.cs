@@ -9,31 +9,31 @@ namespace ChildProject
 {
     class Human
     {
-        private object value;
-        private object value1;
-        private object value2;
+        private object name;
+        private object surname;
+        private object age;
 
-        public Human(object value, object value1, object value2)
+        public Human(object name, object surname, object age)
         {
-            this.value = value;
-            this.value2 = value2;
-            this.value1 = value1;
+            this.name = name;
+            this.surname = surname;
+            this.age = age;
 
         }
 
         public string Name()
         {
-            return ToString() + ": " + value;
+            return ToString() + ": " + name;
 
         }
         public string Surname()
         {
-            return ToString() + ": " + value1;
+            return ToString() + ": " + surname;
 
         }
         public string Age()
         {
-            return ToString() + ": " + value2;
+            return ToString() + ": " + age;
 
         }
         
