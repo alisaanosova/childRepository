@@ -10,23 +10,30 @@ namespace ChildProject
     class Human
     {
         //добавь нижнее подчеркивание
-        private string name;
-        private string surname;
-        private int age;
+        private string _name;
+        private string _surname;
+        private int _age;
+
+        public Human()
+        {
+            _name = "unnamed";
+            _surname = "unnamed";
+            _age = 0;
+        }
         
         //добавь конструктор без параметров, еще называется по-умолчанию
         //типа имя будет анноун нарп и т.п.
-        public Human(string name, string surname, int age)
+        public void HumanInfo(string name, string surname, int age)
         {
-            this.name = name;
-            this.surname = surname;
-            this.age = age;
+            _name = name;
+            _surname = surname;
+            _age = age;
 
         }
 
         public override string ToString()
         {
-            return $" Name: {name},\r\n Surname: {surname},\r\n Age: {age}";
+            return $" Name: {_name} \r\n Surname: {_surname} \r\n Age: {_age}";
 
         }
         
