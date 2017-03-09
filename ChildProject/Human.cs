@@ -23,7 +23,7 @@ namespace ChildProject
         
         //добавь конструктор без параметров, еще называется по-умолчанию
         //типа имя будет анноун нарп и т.п.
-        public void HumanInfo(string name, string surname, int age)
+        public Human(string name, string surname, int age)
         {
             _name = name;
             _surname = surname;
