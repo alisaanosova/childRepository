@@ -17,18 +17,8 @@ namespace secondcalendar
             //Person person = new Person(Console.ReadLine(), Console.ReadLine(), DateTime.Parse(Console.ReadLine()));
             Person person = new Person("pasha", "ruchkov", DateTime.Parse("2.2.2000"));
             
-            Student student = new Student();
             Exam exam = new Exam("Math", 12, DateTime.Parse("2.2.2001"));
-            student.Exams(exam, 0);
-            exam = new Exam("biol", 11, DateTime.Parse("21.2.2001"));
-            student.Exams(exam, 1);
-            exam = new Exam("geom", 10, DateTime.Parse("25.2.2001"));
-            student.Exams(exam, 2);
-            exam = new Exam("astr", 12, DateTime.Parse("28.2.2001"));
-            student.Exams(exam, 3);
-            exam = new Exam("alch", 11, DateTime.Parse("1.3.2001"));
-            student.Exams(exam, 4);
-            student = new Student(person,exam,2);
+            Student student = new Student(person,exam,2);
             Console.WriteLine(student);
 
             
