@@ -46,6 +46,7 @@
     <Compile Include="Calendar.cs" />
     <Compile Include="CalendarActions.cs" />
     <Compile Include="Exam.cs" />
+    <Compile Include="Examples\VectorClass.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
