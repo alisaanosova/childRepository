@@ -29,15 +29,6 @@ namespace ChildProject
             _groupnumber = groupnumber;
         }
 
-        public void Exams(Exam exam, int i)
-        {
-            while (i < _exams.Length)
-            {
-                _exams[i] = exam;
-                break;
-                
-            }
-        }
 
         public Person Person
         {
@@ -59,7 +50,7 @@ namespace ChildProject
 
         public override string ToString()
         {
-            return $"{_person}\r\n {_exam} \r\n Group: {_groupnumber} \r\n {_exams[0]} \r\n {_exams[1]} \r\n {_exams[2]} \r\n {_exams[3]} \r\n {_exams[4]}" ;
+            return $"{_person}\r\n {_exam} \r\n Group: {_groupnumber} \r\n" ;
         }
     }
 }
