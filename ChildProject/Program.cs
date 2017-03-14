@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using ChildProject;
@@ -10,17 +11,30 @@ namespace secondcalendar
     
     internal class Program
     {
-
         static void Main(string[] args)
         {
             string globalAnswer;
-            Human human = new Human(Console.ReadLine(), Console.ReadLine(), int.Parse(Console.ReadLine()));
-            Console.WriteLine(human.ToString());
-            human = new Human();
-            Console.WriteLine("\r\n"+human.ToString());
+            //Person person = new Person(Console.ReadLine(), Console.ReadLine(), DateTime.Parse(Console.ReadLine()));
+            Person person = new Person("pasha", "ruchkov", DateTime.Parse("2.2.2000"));
+            
+            Student student = new Student();
+            Exam exam = new Exam("Math", 12, DateTime.Parse("2.2.2001"));
+            student.Exams(exam, 0);
+            exam = new Exam("biol", 11, DateTime.Parse("21.2.2001"));
+            student.Exams(exam, 1);
+            exam = new Exam("geom", 10, DateTime.Parse("25.2.2001"));
+            student.Exams(exam, 2);
+            exam = new Exam("astr", 12, DateTime.Parse("28.2.2001"));
+            student.Exams(exam, 3);
+            exam = new Exam("alch", 11, DateTime.Parse("1.3.2001"));
+            student.Exams(exam, 4);
+            student = new Student(person,exam,2);
+            Console.WriteLine(student);
+
+            
+            
             do
             {
-                int res;
                 CalendarActions my = new CalendarActions();
                 Calendar info = new Calendar();
                 
@@ -73,6 +87,7 @@ namespace secondcalendar
 
                             bool test1 = my.isDateValue(year, month, day);
 
+                            int res;
                             if (answer2 == "amount" ^ answer2 == "chrono")
                             {
                                 if (test1)
