@@ -8,6 +8,8 @@ namespace ChildProject
 {
     class Exam
     {
+		//переделать на автосвойства, соблюдать ноттацию
+		//во всех остальных местах использовать уже свойства и это качается и других классов
         public string _itemName;
         public int _valuation;
         public DateTime _examDate;

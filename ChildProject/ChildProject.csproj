@@ -47,7 +47,6 @@
     <Compile Include="CalendarActions.cs" />
     <Compile Include="Exam.cs" />
     <Compile Include="Person.cs" />
-    <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
