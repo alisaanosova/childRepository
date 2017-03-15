@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,13 +8,18 @@ using ChildProject.Examples;
 
 namespace ChildProject
 {
-    class Student 
+    class Student
     {
         private Person _person;
         private int _groupnumber;
-        private Exam[] _exams = new Exam[] {};
-       
-        private double Avarage { get; set; }
+        private Exam[] _exams = {};
+        private double _avarage;
+        private double Avarage
+        {
+            get { return _avarage; }
+            set { _avarage += value;}
+        }
+        
 
         public Student()
         {
@@ -25,9 +31,15 @@ namespace ChildProject
         {
             _person = person;
             _groupnumber = groupnumber;
-            AddExams(new[] { new Exam("Math", 12, DateTime.Parse("2.2.2001")) });
-            AddExams(new[] { new Exam("bio", 10, DateTime.Parse("12.2.2001")) });
-            AddExams(new[] { new Exam("geo", 9, DateTime.Parse("22.2.2001")) });
+            Exam info = new Exam("Math", 12, DateTime.Parse("2.2.2001"));
+            AddExams(new[] {info});
+            Avarage = info.Valuation;
+            info = new Exam("bio", 10, DateTime.Parse("12.2.2001"));
+            AddExams(new[] {info});
+            Avarage = info.Valuation;
+            info = new Exam("geo", 9, DateTime.Parse("22.2.2001"));
+            AddExams(new[] {info});
+            Avarage = info.Valuation;
         }
 
 
@@ -49,9 +61,10 @@ namespace ChildProject
             get { return _groupnumber; }
             set { _groupnumber = value; }
         }
+
         public override string ToString()
         {
-            return $"{Person}\r\n Group: {GroupNumber} \r\n{_exams[0]}\r\n{_exams[1]}\r\n{_exams[2]}";
+            return $"{Person}\r\n Group: {GroupNumber} \r\n{(_avarage)/3}\r\n";
         }
 
         public virtual string ToShortString()

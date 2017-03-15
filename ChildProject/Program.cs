@@ -21,7 +21,9 @@ namespace secondcalendar
             
             Student student = new Student(person,2);
             Console.WriteLine(student);
-            Console.WriteLine(student.ToShortString());
+            Console.WriteLine(student.ToString());
+            VectorClass vec = new VectorClass();
+            vec.ConcatVector(new[] { new Exam("asda", 1, DateTime.Parse("2.2.300"))});
             Console.ReadKey();
             //вынеси разные задачия в отдельные методы прям здесь в программе. чтоб в мейне был только вызов методов. ато бесит это каждый раз комменить
             //а можно вообще удалить)
