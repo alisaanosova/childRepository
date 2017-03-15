@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calendar.cs" />
-    <Compile Include="CalendarActions.cs" />
     <Compile Include="Exam.cs" />
     <Compile Include="Examples\VectorClass.cs" />
     <Compile Include="Person.cs" />

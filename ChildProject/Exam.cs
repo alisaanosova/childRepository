@@ -10,26 +10,26 @@ namespace ChildProject
     {
 		//переделать на автосвойства, соблюдать ноттацию
 		//во всех остальных местах использовать уже свойства и это качается и других классов
-        public string _itemName;
-        public int _valuation;
-        public DateTime _examDate;
+        public string ItemName { get; set; }
+        public int Valuation { get; set; }
+        public DateTime ExamDate { get; set; }
 
         public Exam()
         {
-            _itemName = "unknown";
-            _valuation = 0;
-            _examDate = DateTime.MinValue;
+            ItemName = "unknown";
+            Valuation = 0;
+            ExamDate = DateTime.MinValue;
         }
         public Exam(string itemName, int valuation, DateTime date)
         {
-            _itemName = itemName;
-            _valuation = valuation;
-            _examDate = date;
+            ItemName = itemName;
+            Valuation = valuation;
+            ExamDate = date;
         }
 
         public override string ToString()
         {
-            return $"\r\n Item name: {_itemName} \r\n Valuation: {_valuation} \r\n ExamDate: {_examDate}";
+            return $"\r\n Item name: {ItemName} \r\n Valuation: {Valuation} \r\n ExamDate: {ExamDate}";
         }
 
     }

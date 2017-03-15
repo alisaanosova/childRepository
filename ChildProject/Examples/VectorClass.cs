@@ -8,44 +8,28 @@ namespace ChildProject.Examples
 {
 	class VectorClass
 	{
-		private int[] _vector;
+		public Exam[] Vector { get; set; }
+        public Exam Exam { get; set; }
 
-		//тут кстати важный момент работы с массивами и коллекциями в геттере обрати внимание
-		public int[] Vector
+	    public VectorClass(Exam[] vector)
 		{
-			get
-			{
-				if (_vector == null)
-				{
-					_vector = new int[] {};
-				}
-				return _vector;
-
-				//а еще можно сразу ожной строкой тернарным оператором, привыкай
-				//return _vector ?? (_vector = new int[] {});
-			}
-			set { _vector = value; }
-		}
-
-		public VectorClass(int[] vector)
-		{
-			_vector = vector;
+			Vector = vector;
 		}
 
 		public VectorClass()
 		{
-			_vector = new int[] {};
+			Vector = new Exam[] {};
 		}
 
-		public void ConcatVector(int[] vector)
+		public void ConcatVector(Exam[] vector)
 		{
 			Vector = Vector.Concat(vector).ToArray();
 		}
 
-		public static void Test()
+		public void Test(Exam exam)
 		{
-			var vector1 = new VectorClass(new int[] {1, 2, 3, 4, 5});
-			var vector2 = new VectorClass(new []{6, 7});
+			var vector1 = new VectorClass(new Exam[] {exam});
+			var vector2 = new VectorClass(new []{exam});
 
 			vector1.ConcatVector(vector2.Vector);
 

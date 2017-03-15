@@ -8,10 +8,8 @@ namespace ChildProject
 {
     class Student
     {
-		//фу-фу-фу создавать объекты там где объявляются переменные
-		//все в конструктор
-        private Person _person = new Person();
-        private Exam _exam = new Exam();
+        private Person _person;
+        private Exam _exam;
         private int _groupnumber;
         readonly Exam[] _exams = new Exam[5];
        
@@ -49,10 +47,9 @@ namespace ChildProject
             get { return _groupnumber; }
             set { _groupnumber = value; }
         }
-		//опять же тут уже надо юзать свойства а не приватные переменные
         public override string ToString()
         {
-            return $"{_person}\r\n {_exam} \r\n Group: {_groupnumber} \r\n" ;
+            return $"{Person}\r\n {Exam} \r\n Group: {GroupNumber} \r\n" ;
         }
     }
 }
