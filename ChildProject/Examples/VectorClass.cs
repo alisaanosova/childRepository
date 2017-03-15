@@ -9,7 +9,6 @@ namespace ChildProject.Examples
 	class VectorClass
 	{
 		public Exam[] Vector { get; set; }
-        public Exam Exam { get; set; }
 
 	    public VectorClass(Exam[] vector)
 		{
@@ -26,17 +25,17 @@ namespace ChildProject.Examples
 			Vector = Vector.Concat(vector).ToArray();
 		}
 
-		public void Test(Exam exam)
-		{
-			var vector1 = new VectorClass(new Exam[] {exam});
-			var vector2 = new VectorClass(new []{exam});
+		//public void Test()
+		//{
+		//	//var vector1 = new VectorClass(new Exam[] {Vector[0]});
+		//	//var vector2 = new VectorClass(new []{});
 
-			vector1.ConcatVector(vector2.Vector);
+		//	//vector1.ConcatVector(vector2.Vector);
 
-			for (int i = 0; i < vector1.Vector.Length; i++)
-			{
-				Console.Write(vector1.Vector[i] + " ");
-			}
-		}
+		//	for (int i = 0; i <Vector.Length; i++)
+		//	{
+		//		Console.Write(Vector[i] + " ");
+		//	}
+		//}
 	}
 }

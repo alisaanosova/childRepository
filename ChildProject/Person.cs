@@ -59,11 +59,11 @@ namespace ChildProject
 
         public override string ToString()
         {
-            return $" Name: {_name}\r\n Surname: {_surname} \r\n Date: {_date}";
+            return $" Name: {Name}\r\n Surname: {Surname} \r\n Date: {Date}";
         }
         public virtual string ToSortString()
         {
-            return $" Name: {_name}\r\n Surname: {_surname}";
+            return $" Name: {Name}\r\n Surname: {Surname}";
         }
     }
 

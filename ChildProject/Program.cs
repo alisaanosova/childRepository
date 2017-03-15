@@ -15,19 +15,13 @@ namespace secondcalendar
         static void Main(string[] args)
         {
 //            string globalAnswer;
-//            //Person person = new Person(Console.ReadLine(), Console.ReadLine(), DateTime.Parse(Console.ReadLine()));
-//            Person person = new Person("pasha", "ruchkov", DateTime.Parse("2.2.2000"));
+           //Person person = new Person(Console.ReadLine(), Console.ReadLine(), DateTime.Parse(Console.ReadLine()));
+           Person person = new Person("pasha", "ruchkov", DateTime.Parse("2.2.2000"));
+
             
-            Exam exam = new Exam("Math", 12, DateTime.Parse("2.2.2001"));
-//            Student student = new Student(person,exam,2);
-//            Console.WriteLine(student);
-//            
-//
-//            while (globalAnswer == "y");
-
-
-			VectorClass val = new VectorClass();
-            val.Test(exam);
+            Student student = new Student(person,2);
+            Console.WriteLine(student);
+            Console.WriteLine(student.ToShortString());
             Console.ReadKey();
             //вынеси разные задачия в отдельные методы прям здесь в программе. чтоб в мейне был только вызов методов. ато бесит это каждый раз комменить
             //а можно вообще удалить)

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ChildProject
 {
-    class Exam
+    class Exam 
     {
-		//переделать на автосвойства, соблюдать ноттацию
-		//во всех остальных местах использовать уже свойства и это качается и других классов
         public string ItemName { get; set; }
         public int Valuation { get; set; }
         public DateTime ExamDate { get; set; }
@@ -25,6 +23,7 @@ namespace ChildProject
             ItemName = itemName;
             Valuation = valuation;
             ExamDate = date;
+            
         }
 
         public override string ToString()
