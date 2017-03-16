@@ -36,15 +36,19 @@ namespace ChildProject
         public string Highest()
         {
             {
+                if (_exams.Length == 0)
+                {
+                    return "Exams list is empty";
+                }
+                int max = int.MinValue;
                 for (int i = 0; i < _exams.Length; i++)
                 {
-                    
-                    if  (_exams[i].Valuation > 0)
+                    if  (_exams[i].Valuation > max)
                     {
-                        return "Highest valuation on: "+_exams[i].ItemName ;
+                        max = i;
                     }
                 }
-                return "Exam list is empty";
+                return _exams[max].ItemName;
             }
         }
 
