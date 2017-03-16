@@ -22,10 +22,6 @@ namespace ChildProject
             {
                 for (int i = 0; i < _exams.Length; i++)
                 {
-                    if (_exams[i].Valuation == 0)
-                    {
-                        return _avarage = 0;
-                    }
                     if (_exams[i].Valuation > 0)
                     {
                        _avarage += _exams[i].Valuation;
