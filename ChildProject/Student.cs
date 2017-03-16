@@ -13,11 +13,14 @@ namespace ChildProject
         private Person _person;
         private int _groupnumber;
         private Exam[] _exams = {};
+        private int[] _array = {};
         private double _avarage;
-        private double Avarage
+        public void Avarage()
         {
-            get { return _avarage; }
-            set { _avarage += value;}
+            {
+                for (int i = 0; i < _array.Length; i++)
+                    _avarage += _array[i];
+            }
         }
         
 
@@ -31,15 +34,6 @@ namespace ChildProject
         {
             _person = person;
             _groupnumber = groupnumber;
-            Exam info = new Exam("Math", 12, DateTime.Parse("2.2.2001"));
-            AddExams(new[] {info});
-            Avarage = info.Valuation;
-            info = new Exam("bio", 10, DateTime.Parse("12.2.2001"));
-            AddExams(new[] {info});
-            Avarage = info.Valuation;
-            info = new Exam("geo", 9, DateTime.Parse("22.2.2001"));
-            AddExams(new[] {info});
-            Avarage = info.Valuation;
         }
 
 
@@ -55,6 +49,10 @@ namespace ChildProject
         {
             _exams = _exams.Concat(exams).ToArray();
         }
+        public void AddValuation(int[] exams)
+        {
+            _array = _array.Concat(exams).ToArray();
+        }
 
         public int GroupNumber
         {
@@ -64,7 +62,7 @@ namespace ChildProject
 
         public override string ToString()
         {
-            return $"{Person}\r\n Group: {GroupNumber} \r\n{(_avarage)/3}\r\n";
+            return $"{Person}\r\n Group: {GroupNumber} \r\n{_exams[0]}\r\n{_exams[1]}\r\n{_avarage/_array.Length}";
         }
 
         public virtual string ToShortString()
