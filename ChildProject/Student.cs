@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,16 +14,40 @@ namespace ChildProject
         private Person _person;
         private int _groupnumber;
         private Exam[] _exams = {};
-        private int[] _array = {};
         private double _avarage;
-        public void Avarage()
+        private int _highestValuation;
+
+        private double Avarage
         {
+            get
             {
-                for (int i = 0; i < _array.Length; i++)
-                    _avarage += _array[i];
+                for (int i = 0; i < _exams.Length; i++)
+                {
+                    _avarage += _exams[i].Valuation;
+                }
+                
+                return _avarage/_exams.Length;
+            }
+
+        }
+
+        private int Highest
+        {
+            get
+            {
+                _highestValuation = int.MinValue;
+                for (int i = 0; i < _exams.Length; i++)
+                {
+                    if (_exams[i].Valuation > _highestValuation)
+                    {
+                        _highestValuation = _exams[i].Valuation;
+                    }
+                }
+                return _highestValuation;
             }
         }
-        
+
+
 
         public Student()
         {
@@ -49,10 +74,6 @@ namespace ChildProject
         {
             _exams = _exams.Concat(exams).ToArray();
         }
-        public void AddValuation(int[] exams)
-        {
-            _array = _array.Concat(exams).ToArray();
-        }
 
         public int GroupNumber
         {
@@ -62,7 +83,7 @@ namespace ChildProject
 
         public override string ToString()
         {
-            return $"{Person}\r\n Group: {GroupNumber} \r\n{_exams[0]}\r\n{_exams[1]}\r\n{_avarage/_array.Length}";
+            return $"{Person}\r\n Group: {GroupNumber} \r\n{_exams[0]}\r\n{_exams[1]}\r\n{Avarage}\r\n{Highest}";
         }
 
         public virtual string ToShortString()
