@@ -13,37 +13,42 @@ namespace ChildProject
     {
         private Person _person;
         private int _groupnumber;
-        private Exam[] _exams = {};
+        private Exam[] _exams = new Exam[] {};
         private double _avarage;
-        private int _highestValuation;
 
-        private double Avarage
+        public double Avarage
         {
             get
             {
                 for (int i = 0; i < _exams.Length; i++)
                 {
-                    _avarage += _exams[i].Valuation;
+                    if (_exams[i].Valuation == 0)
+                    {
+                        return _avarage = 0;
+                    }
+                    if (_exams[i].Valuation > 0)
+                    {
+                       _avarage += _exams[i].Valuation;
+                        return _avarage / _exams.Length;
+                    }
                 }
-                
-                return _avarage/_exams.Length;
+                return 0;
             }
 
         }
 
-        private int Highest
+        public string Highest()
         {
-            get
             {
-                _highestValuation = int.MinValue;
                 for (int i = 0; i < _exams.Length; i++)
                 {
-                    if (_exams[i].Valuation > _highestValuation)
+                    
+                    if  (_exams[i].Valuation > 0)
                     {
-                        _highestValuation = _exams[i].Valuation;
+                        return "Highest valuation on: "+_exams[i].ItemName ;
                     }
                 }
-                return _highestValuation;
+                return "Exam list is empty";
             }
         }
 
@@ -83,7 +88,7 @@ namespace ChildProject
 
         public override string ToString()
         {
-            return $"{Person}\r\n Group: {GroupNumber} \r\n{_exams[0]}\r\n{_exams[1]}\r\n{Avarage}\r\n{Highest}";
+            return $"{Person}\r\n Group: {GroupNumber} \r\n";
         }
 
         public virtual string ToShortString()

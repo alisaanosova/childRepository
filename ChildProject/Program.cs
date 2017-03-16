@@ -12,12 +12,17 @@ namespace ChildProject
 
             
             Student student = new Student(person,2);
-            Exam exam = new Exam("Math", 12, DateTime.Parse("2.2.2001"));
+            Exam exam = new Exam("Math", 0, DateTime.Parse("2.2.2001"));
             student.AddExams(new [] {exam});
             exam = new Exam("bio", 11, DateTime.Parse("12.2.2001"));
             student.AddExams(new []{exam});
+            
             Console.WriteLine(student.ToString());
+            Console.WriteLine(student.Highest());
+            Console.WriteLine("Avarage :{0}", student.Avarage);
+
             VectorClass vec = new VectorClass();
+            
             vec.ConcatVector(new[] { new Exam("asda", 1, DateTime.Parse("2.2.300"))});
             Console.ReadKey();
         }
