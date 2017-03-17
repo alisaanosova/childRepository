@@ -14,24 +14,20 @@ namespace ChildProject
         private Person _person;
         private int _groupnumber;
         private Exam[] _exams = new Exam[] {};
-        private double _avarage;
 
         public double Avarage
         {
             get
             {
+                double avarage = 0;
                 for (int i = 0; i < _exams.Length; i++)
                 {
                     if (_exams.Length == 0)
-                    {
                         return 0;
-                    }
                     if (_exams[i].Valuation > 0)
-                    {
-                       _avarage += _exams[i].Valuation;
-                    }
+                      avarage += _exams[i].Valuation;
                 }
-                return _avarage / _exams.Length;
+                return avarage / _exams.Length;
             }
 
         }
@@ -41,9 +37,7 @@ namespace ChildProject
             get
             {
                 if (_exams.Length == 0)
-                {
                     return "Exams list is empty";
-                }
                 int max = int.MinValue;
                 string result = "";
                 for (int i = 0; i < _exams.Length; i++)
@@ -99,7 +93,7 @@ namespace ChildProject
 
         public virtual string ToShortString()
         {
-            return "0";
+            return $"{Person}\r\n Group: {GroupNumber} \r\n Avarage valuation: {Avarage} \r\n Highest exam valuation on: {Highest}";
 
         }
     }

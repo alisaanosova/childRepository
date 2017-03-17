@@ -24,8 +24,8 @@ namespace ChildProject
             student.AddExams(new[] { exam });
 
             Console.WriteLine(student.ToString());
-            Console.WriteLine("Highest valuation on : {0}",student.Highest);
-            Console.WriteLine("Avarage :{0}", student.Avarage);
+            Console.WriteLine(student.ToShortString());
+            
 
             VectorClass vec = new VectorClass();
             
