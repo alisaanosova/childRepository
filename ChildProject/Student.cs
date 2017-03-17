@@ -22,33 +22,39 @@ namespace ChildProject
             {
                 for (int i = 0; i < _exams.Length; i++)
                 {
+                    if (_exams.Length == 0)
+                    {
+                        return 0;
+                    }
                     if (_exams[i].Valuation > 0)
                     {
                        _avarage += _exams[i].Valuation;
-                        return _avarage / _exams.Length;
                     }
                 }
-                return 0;
+                return _avarage / _exams.Length;
             }
 
         }
 
-        public string Highest()
+        public string Highest
         {
+            get
             {
                 if (_exams.Length == 0)
                 {
                     return "Exams list is empty";
                 }
                 int max = int.MinValue;
+                string result = "";
                 for (int i = 0; i < _exams.Length; i++)
                 {
-                    if  (_exams[i].Valuation > max)
+                    if (_exams[i].Valuation > max)
                     {
-                        max = i;
+                        max = _exams[i].Valuation;
+                        result = _exams[i].ItemName;
                     }
                 }
-                return _exams[max].ItemName;
+                return result;
             }
         }
 

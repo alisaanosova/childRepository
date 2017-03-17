@@ -12,19 +12,19 @@ namespace ChildProject
 
             
             Student student = new Student(person,2);
-            Exam exam = new Exam("Math", 2, DateTime.Parse("2.2.2001"));
+            Exam exam = new Exam("Math", 11, DateTime.Parse("2.2.2001"));
             student.AddExams(new [] {exam});
             exam = new Exam("bio", 9, DateTime.Parse("12.2.2001"));
             student.AddExams(new []{exam});
-            exam = new Exam("Geo", 9, DateTime.Parse("12.2.2001"));
+            exam = new Exam("Geo", 12, DateTime.Parse("12.2.2001"));
             student.AddExams(new[] { exam });
-            exam = new Exam("Eng", 3, DateTime.Parse("12.2.2001"));
+            exam = new Exam("Eng", 10, DateTime.Parse("12.2.2001"));
             student.AddExams(new[] { exam });
-            exam = new Exam("Alch", 12, DateTime.Parse("12.2.2001"));
+            exam = new Exam("Alch", 11, DateTime.Parse("12.2.2001"));
             student.AddExams(new[] { exam });
 
             Console.WriteLine(student.ToString());
-            Console.WriteLine("Highest valuation on : {0}",student.Highest());
+            Console.WriteLine("Highest valuation on : {0}",student.Highest);
             Console.WriteLine("Avarage :{0}", student.Avarage);
 
             VectorClass vec = new VectorClass();
