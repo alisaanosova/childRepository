@@ -1,5 +1,6 @@
 ﻿using System;
 using ChildProject.Examples;
+using ChildProject.lab_1.option_2;
 
 namespace ChildProject
 {
@@ -8,28 +9,12 @@ namespace ChildProject
     {
         static void Main(string[] args)
         {
-           Person person = new Person("pasha", "ruchkov", DateTime.Parse("2.2.2000"));
-
-            
-            Student student = new Student(person,2);
-            Exam exam = new Exam("Math", 11, DateTime.Parse("2.2.2001"));
-            student.AddExams(new [] {exam});
-            exam = new Exam("bio", 9, DateTime.Parse("12.2.2001"));
-            student.AddExams(new []{exam});
-            exam = new Exam("Geo", 12, DateTime.Parse("12.2.2001"));
-            student.AddExams(new[] { exam });
-            exam = new Exam("Eng", 10, DateTime.Parse("12.2.2001"));
-            student.AddExams(new[] { exam });
-            exam = new Exam("Alch", 11, DateTime.Parse("12.2.2001"));
-            student.AddExams(new[] { exam });
-
-            Console.WriteLine(student.ToString());
-            Console.WriteLine(student.ToShortString());
-            
-
-            VectorClass vec = new VectorClass();
-            
-            vec.ConcatVector(new[] { new Exam("asda", 1, DateTime.Parse("2.2.300"))});
+            Person person = new Person("pasha", "ruchkov", DateTime.Parse("2.2.2000"));
+            Magazine magazine = new Magazine("IMYA",DateTime.Parse("1.2.2000"), 1 );
+            magazine.AddArticle(new [] {new Article(person, "name", 2), });
+            magazine.AddArticle(new [] {new Article(person, "name1", 3), });
+            magazine.AddArticle(new [] {new Article(person, "name2", 5), });
+            Console.WriteLine(magazine.ToString());
             Console.ReadKey();
         }
     }
