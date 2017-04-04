@@ -30,10 +30,9 @@ namespace ChildProject.lab_1.option_2
         public string Name { get { return _name; } set { _name = value; } }
         public DateTime Date { get { return _date; } set { _date = value; } }
         public Article[] Articles { get { return _articles; } set { _articles = value; } }
-//здесь замени к параметрам на парамс, чтоб ты мог передавать как одну статью так и несколько, и добавь нужные проверки
-        public void AddArticle(Article[] articles)
+        public void AddArticle(params Article[] art)
         {
-            _articles = _articles.Concat(articles).ToArray();
+            _articles = _articles.Concat(art).ToArray();
         }
 
         public double AvarageRaiting
@@ -47,7 +46,7 @@ namespace ChildProject.lab_1.option_2
                         return 0;
                     if (_articles.Length > 0)
                     {
-                        avarage += _articles[i].Raiting;
+                        avarage += _articles[i]._raiting;
                     }
                 }
                 return avarage/_articles.Length;

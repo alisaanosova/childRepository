@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendar\MyDateTime.cs" />
     <Compile Include="lab 1\option 1\Exam.cs" />
     <Compile Include="Examples\VectorClass.cs" />
     <Compile Include="lab 1\option 2\Article.cs" />
