@@ -73,9 +73,9 @@ namespace ChildProject.Calendar
             get { return _year; }
             set { _year = value; }
         }
-        public void Action(ref MyDateTime date, ref MyDateTime date2)
+        public void Chrono(ref MyDateTime date, ref MyDateTime date2)
         {
-            if (date.Year < date2.Year)
+            if (date.Year > date2.Year)
             {
                 ChronoChange(ref date, ref date2);
             }

@@ -12,10 +12,13 @@ namespace ChildProject
         {
             int result;
             MyDateTime act = new MyDateTime();
-            MyDateTime date = new MyDateTime(1, 1, 2000);
-            MyDateTime date2 = new MyDateTime(1, 1, 2001);
+            MyDateTime date = new MyDateTime(2, 1, 2000);
+            MyDateTime date2 = new MyDateTime(1, 1, 2000);
+
+            act.Chrono(ref date, ref date2);
             Console.WriteLine(date.ToString());
             Console.WriteLine(date2.ToString());
+            
             act.Calculated(date, date2, out result);
             Console.WriteLine(result);
             //Person person = new Person("pasha", "ruchkov", DateTime.Parse("2.2.2000"));
