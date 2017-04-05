@@ -21,9 +21,18 @@ namespace ChildProject.Calendar
 
         public MyDateTime(int day, int month, int year)
         {
-            _day = day;
-            _month = month;
-            _year = year;
+            if (day > DayOfMounth(year, month))
+            {
+                _day = 0;
+                _month = 0;
+                _year = 0;
+            }
+            else
+            {
+                _day = day;
+                _month = month;
+                _year = year;
+            }
         }
 
         public int DayOfMounth(int year, int month)

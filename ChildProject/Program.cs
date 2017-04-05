@@ -12,7 +12,7 @@ namespace ChildProject
         {
             int result;
             MyDateTime act = new MyDateTime();
-            MyDateTime date = new MyDateTime(2, 1, 2000);
+            MyDateTime date = new MyDateTime(29, 2, 2001);
             MyDateTime date2 = new MyDateTime(1, 1, 2000);
 
             act.Chrono(ref date, ref date2);
