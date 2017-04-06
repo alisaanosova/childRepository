@@ -23,20 +23,22 @@ namespace ChildProject.Calendar
         {
             if (day > DayOfMounth(year, month))
             {
-                _day = 0;
-                _month = 0;
-                _year = 0;
+                throw new ArgumentException("This is not a leap year, february has only 28 days");
             }
-            else
+            if (day <= 0)
             {
+                throw new ArgumentException("Uncorrect day value");
+            }
                 _day = day;
                 _month = month;
                 _year = year;
-            }
+            
         }
 
         public int DayOfMounth(int year, int month)
         {
+            if (month <= 0 ^ year < 0)
+                throw new ArgumentException("Uncorrect month or year value");
             int feb = 28;
             if (Leap(year))
             {
@@ -55,15 +57,15 @@ namespace ChildProject.Calendar
             }
             return false;
         }
-        public int IsDateValue(int year, int month, int day)
-        {
-            if (DayOfMounth(year, month) >= day && day > 0)
-            {
-                return _day;
-            }
-            return 0;
+        //public int IsDateValue(int year, int month, int day)
+        //{
+        //    if (DayOfMounth(year, month) >= day && day > 0)
+        //    {
+        //        return _day;
+        //    }
+        //    throw new ArgumentException("Uncorrect day value");
 
-        }
+        //}
 
         public int Day
         {
@@ -185,10 +187,6 @@ namespace ChildProject.Calendar
 
         public override string ToString()
         {
-            if (IsDateValue(_year, _month, _day) == 0)
-            {
-                return "error";
-            }
             return $"{Day}.{Month}.{Year}";
         }
     }
