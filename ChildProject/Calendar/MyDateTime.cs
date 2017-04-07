@@ -17,28 +17,23 @@ namespace ChildProject.Calendar
             _day = 0;
             _month = 0;
             _year = 0;
+            
         }
 
         public MyDateTime(int day, int month, int year)
         {
-            if (day > DayOfMounth(year, month))
-            {
-                throw new ArgumentException("This is not a leap year, february has only 28 days");
-            }
-            if (day <= 0)
-            {
-                throw new ArgumentException("Uncorrect day value");
-            }
-                _day = day;
-                _month = month;
-                _year = year;
             
+            Month = month;
+            Year = year;
+            Day = day;
         }
 
         public int DayOfMounth(int year, int month)
         {
-            if (month <= 0 ^ year < 0)
-                throw new ArgumentException("Uncorrect month or year value");
+            if (month <= 0 ^ month > 12)
+            {
+                throw new ArgumentException("Uncorrect month value");
+            }
             int feb = 28;
             if (Leap(year))
             {
@@ -57,20 +52,18 @@ namespace ChildProject.Calendar
             }
             return false;
         }
-        //public int IsDateValue(int year, int month, int day)
-        //{
-        //    if (DayOfMounth(year, month) >= day && day > 0)
-        //    {
-        //        return _day;
-        //    }
-        //    throw new ArgumentException("Uncorrect day value");
-
-        //}
 
         public int Day
         {
             get { return _day; }
-            set { _day = value; }
+            set
+            {
+                if (value <= 0 ^ value > DayOfMounth(_year, _month))
+                {
+                    throw new ArgumentException("Uncorrect date value");
+                }
+                _day = value;
+            }
         }
 
         public int Month
@@ -82,7 +75,14 @@ namespace ChildProject.Calendar
         public int Year
         {
             get { return _year; }
-            set { _year = value; }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Uncorrect year value");
+                }
+                _year = value;
+            }
         }
         public void Chrono(ref MyDateTime date, ref MyDateTime date2)
         {
