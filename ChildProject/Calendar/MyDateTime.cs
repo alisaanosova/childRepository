@@ -69,7 +69,12 @@ namespace ChildProject.Calendar
         public int Month
         {
             get { return _month; }
-            set { _month = value; }
+            set
+            {
+                if(value > 12 ^ value <= 0)
+                    throw new ArgumentException("Uncorrect month value");
+                _month = value;
+            }
         }
 
         public int Year
