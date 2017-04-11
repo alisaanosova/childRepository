@@ -8,10 +8,46 @@ namespace ChildProject.Calendar
 {
     class MyDateTime
     {
-        public int _day;
-        public int _month;
-        public int _year;
+        private int _day;
+        private int _month;
+        private int _year;
 
+        public int Day
+        {
+            get { return _day; }
+            private set
+            {
+                if (value <= 0 || value > DayOfMounth(_year, _month))
+                {
+                    throw new ArgumentException("Uncorrect date value");
+                }
+                _day = value;
+            }
+        }
+
+        public int Month
+        {
+            get { return _month; }
+            private set
+            {
+                if (value > 12 || value <= 0)
+                    throw new ArgumentException("Uncorrect month value");
+                _month = value;
+            }
+        }
+
+        public int Year
+        {
+            get { return _year; }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Uncorrect year value");
+                }
+                _year = value;
+            }
+        }
         public MyDateTime()
         {
             _day = 0;
@@ -53,42 +89,7 @@ namespace ChildProject.Calendar
             return false;
         }
 
-        private int Day
-        {
-            get { return _day; }
-            set
-            {
-                if (value <= 0 || value > DayOfMounth(_year, _month))
-                {
-                    throw new ArgumentException("Uncorrect date value");
-                }
-                _day = value;
-            }
-        }
-
-        private int Month
-        {
-            get { return _month; }
-            set
-            {
-                if(value > 12 || value <= 0)
-                    throw new ArgumentException("Uncorrect month value");
-                _month = value;
-            }
-        }
         
-        private int Year
-        {
-            get { return _year; }
-            set
-            {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Uncorrect year value");
-                }
-                _year = value;
-            }
-        }
         public void Chrono(ref MyDateTime date, ref MyDateTime date2)
         {
             if (date.Year > date2.Year)
