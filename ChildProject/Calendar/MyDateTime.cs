@@ -15,7 +15,7 @@ namespace ChildProject.Calendar
         public int Day
         {
             get { return _day; }
-            private set
+            private set 
             {
                 if (value <= 0 || value > DayOfMounth(_year, _month))
                 {
@@ -28,7 +28,7 @@ namespace ChildProject.Calendar
         public int Month
         {
             get { return _month; }
-            private set
+            private set 
             {
                 if (value > 12 || value <= 0)
                     throw new ArgumentException("Uncorrect month value");
@@ -39,7 +39,7 @@ namespace ChildProject.Calendar
         public int Year
         {
             get { return _year; }
-            private set
+            private set 
             {
                 if (value <= 0)
                 {
