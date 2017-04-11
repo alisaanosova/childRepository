@@ -8,9 +8,9 @@ namespace ChildProject.Calendar
 {
     class MyDateTime
     {
-        private int _day;
-        private int _month;
-        private int _year;
+        public int _day;
+        public int _month;
+        public int _year;
 
         public MyDateTime()
         {
@@ -53,7 +53,7 @@ namespace ChildProject.Calendar
             return false;
         }
 
-        public int Day
+        private int Day
         {
             get { return _day; }
             set
@@ -66,7 +66,7 @@ namespace ChildProject.Calendar
             }
         }
 
-        public int Month
+        private int Month
         {
             get { return _month; }
             set
@@ -77,7 +77,7 @@ namespace ChildProject.Calendar
             }
         }
         
-        public int Year
+        private int Year
         {
             get { return _year; }
             set
