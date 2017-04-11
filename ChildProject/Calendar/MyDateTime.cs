@@ -30,7 +30,7 @@ namespace ChildProject.Calendar
 
         public int DayOfMounth(int year, int month)
         {
-            if (month <= 0 ^ month > 12)
+            if (month <= 0 || month > 12)
             {
                 throw new ArgumentException("Uncorrect month value");
             }
@@ -58,7 +58,7 @@ namespace ChildProject.Calendar
             get { return _day; }
             set
             {
-                if (value <= 0 ^ value > DayOfMounth(_year, _month))
+                if (value <= 0 || value > DayOfMounth(_year, _month))
                 {
                     throw new ArgumentException("Uncorrect date value");
                 }
@@ -71,12 +71,12 @@ namespace ChildProject.Calendar
             get { return _month; }
             set
             {
-                if(value > 12 ^ value <= 0)
+                if(value > 12 || value <= 0)
                     throw new ArgumentException("Uncorrect month value");
                 _month = value;
             }
         }
-
+        
         public int Year
         {
             get { return _year; }
