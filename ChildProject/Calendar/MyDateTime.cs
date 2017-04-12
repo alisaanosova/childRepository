@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace ChildProject.Calendar
 {
+   
     class MyDateTime
     {
         private int _day;
         private int _month;
         private int _year;
+
+        
 
         public int Day
         {
@@ -49,24 +52,29 @@ namespace ChildProject.Calendar
             }
         }
         public MyDateTime()
+            :this(1,1,1)
         {
-            _day = 0;
-            _month = 0;
-            _year = 0;
-            
+        }
+        public MyDateTime(int month, int year)
+            :this(1,month,year)
+        {
+        }
+        public MyDateTime(int year)
+            : this(1, 1, year)
+        {
         }
 
         public MyDateTime(int day, int month, int year)
         {
-            
             Month = month;
             Year = year;
             Day = day;
         }
 
-        public int DayOfMounth(int year, int month)
+        private int DayOfMounth(int year, int month)
         {
-            if (month <= 0 || month > 12)
+            month = month - 1;
+            if (month < 0 || month > 12)
             {
                 throw new ArgumentException("Uncorrect month value");
             }
@@ -75,7 +83,7 @@ namespace ChildProject.Calendar
             {
                 feb = 29;
             }
-            int[] days = { 0, 31, feb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            int[] days = {31, feb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             return days[month];
         }
 

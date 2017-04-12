@@ -10,6 +10,10 @@ namespace ChildProject
     {
         static void Main(string[] args)
         {
+            MyDateTime test = new MyDateTime(2000);
+            Console.WriteLine(test);
+            MyDateTime test1 = new MyDateTime();
+            Console.WriteLine(test1);
             int result;
             MyDateTime act = new MyDateTime();
             MyDateTime date = new MyDateTime(29, 2, 2001);
@@ -17,6 +21,7 @@ namespace ChildProject
             act.Chrono(ref date, ref date2);
             Console.WriteLine(date.ToString());
             Console.WriteLine(date2.ToString());
+            
             
             act.Calculated(date, date2, out result);
             Console.WriteLine(result);
