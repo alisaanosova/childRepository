@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChildProject", "ChildProject\ChildProject.csproj", "{005F71D4-40B8-4F06-A40A-85AC0D5CEC9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CALC", "..\..\С#\CALC\CALC\CALC.csproj", "{35380FC7-4E77-4626-BDE6-693EE8A8B4C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CALC", "WindowsFormsApplication1\CALC.csproj", "{B71C0163-7479-4C5C-8177-8457CFD0D2B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{005F71D4-40B8-4F06-A40A-85AC0D5CEC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{005F71D4-40B8-4F06-A40A-85AC0D5CEC9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{005F71D4-40B8-4F06-A40A-85AC0D5CEC9E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35380FC7-4E77-4626-BDE6-693EE8A8B4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35380FC7-4E77-4626-BDE6-693EE8A8B4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35380FC7-4E77-4626-BDE6-693EE8A8B4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35380FC7-4E77-4626-BDE6-693EE8A8B4C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B71C0163-7479-4C5C-8177-8457CFD0D2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B71C0163-7479-4C5C-8177-8457CFD0D2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B71C0163-7479-4C5C-8177-8457CFD0D2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B71C0163-7479-4C5C-8177-8457CFD0D2B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
