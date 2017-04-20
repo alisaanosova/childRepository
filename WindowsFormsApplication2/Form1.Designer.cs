@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication2
+﻿namespace Calculator
 {
     partial class Form1
     {
