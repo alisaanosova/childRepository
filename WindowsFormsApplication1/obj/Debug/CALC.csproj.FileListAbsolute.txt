@@ -1,0 +1,5 @@
+D:\new\childRepository\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\new\childRepository\WindowsFormsApplication1\obj\Debug\CALC.csprojResolveAssemblyReference.cache
+D:\new\childRepository\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+D:\new\childRepository\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\new\childRepository\WindowsFormsApplication1\obj\Debug\CALC.csproj.GenerateResource.Cache
