@@ -16,6 +16,8 @@ namespace Calculator
             switch (count)
             {
                 case 1:
+                    ///asdas
+                    /// 
                     b = a + double.Parse(textBox1.Text);
                     label1.Text = a.ToString() + "+" + b.ToString();
                     textBox1.Text = b.ToString();
