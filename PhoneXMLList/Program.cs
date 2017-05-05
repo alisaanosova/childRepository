@@ -19,14 +19,12 @@ namespace PhoneXMLList
 
             PhoneList list = new PhoneList("PhonesList");
             List<Phone> phones = new List<Phone>();
-            phones.Add(new Phone() { PhoneModel = "a3310", PhoneComp = "nokia", Price = 4000 });
-            phones.Add(new Phone() { PhoneModel = "a3310", PhoneComp = "nokia", Price = 4000 });
-            phones.Add(new Phone() { PhoneModel = "a3310", PhoneComp = "nokia", Price = 4000 });
-            foreach (Phone p in phones)
-            {
-                list.PhonesAdd(p.PhoneModel, p.PhoneComp, p.Price);
-            }
-            list.PhoneListShow();
+            phones.Add(new Phone() { PhoneModel = "iphone5", PhoneComp = "Apple", Price = 4500 });
+            phones.Add(new Phone() { PhoneModel = "galaxy", PhoneComp = "Samsung", Price = 7000 });
+            phones.Add(new Phone() { PhoneModel = "k5", PhoneComp = "Lenovo", Price = 10000 });
+            list.PhonesAdd(phones);
+            //list.PhoneListShow();
+            list.PhonesName("iphone5");
             Console.ReadKey();
         }
     }
