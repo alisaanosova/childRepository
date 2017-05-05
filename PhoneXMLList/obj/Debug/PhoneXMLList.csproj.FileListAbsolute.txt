@@ -1,1 +1,6 @@
 D:\new\childRepository\PhoneXMLList\bin\Debug\PhoneXMLList.exe.config
+D:\new\childRepository\PhoneXMLList\bin\Debug\PhoneXMLList.exe
+D:\new\childRepository\PhoneXMLList\bin\Debug\PhoneXMLList.pdb
+D:\new\childRepository\PhoneXMLList\obj\Debug\PhoneXMLList.csprojResolveAssemblyReference.cache
+D:\new\childRepository\PhoneXMLList\obj\Debug\PhoneXMLList.exe
+D:\new\childRepository\PhoneXMLList\obj\Debug\PhoneXMLList.pdb
