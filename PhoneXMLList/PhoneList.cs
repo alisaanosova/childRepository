@@ -63,5 +63,15 @@ namespace PhoneXMLList
             }
         }
 
+        public void PhonePrice(int price)
+        {
+            int val = 0;
+            foreach (Phone p in _phones)
+            {
+                if (p.Price <= price)
+                    val = p.Price;
+            }
+            Console.WriteLine(val);
+        }
    }
 }
