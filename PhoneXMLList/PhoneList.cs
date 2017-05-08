@@ -7,16 +7,19 @@ using System.Xml.Linq;
 
 namespace PhoneXMLList
 {
-    class PhoneList
+    class PhoneList//надозови класс более внятно. должно нызыватсья что-то типа PhoneXMLRepository
     {
-        private List<Phone> _phones; 
+        private List<Phone> _phones; // зачем ты создал здесь телефоны? ты должен вытягивать в каждом методе а не записывать их в память.
+        //вдруг в другой части кода тоже будут юзать такой класс и этот документ и у тебя будет несоответсвие данных
             private readonly string _fileAdress;
             public PhoneList(string fileAddress)
             {
                 XDocument phone = new XDocument();
                 XElement phones = new XElement("items");
                 phone.Add(phones);
-                _fileAdress = fileAddress;
+               
+                _fileAdress = fileAddress; // это правильно, но зачем ты в конструкторе делаешь все остальное
+                
                 phone.Save(_fileAdress + ".xml");
             }
 
@@ -35,7 +38,7 @@ namespace PhoneXMLList
                 xDoc.Save(_fileAdress + ".xml");
             }
 
-            public void PhoneListShow()
+            public void PhoneListShow() //полагаю этот метод просто для удобства? потому что в репозитории его быть не должно
             {
                 XDocument xdoc = XDocument.Load(_fileAdress + ".xml");
                 foreach (XElement phoneElement in xdoc.Element("items").Elements("phone"))
@@ -54,7 +57,8 @@ namespace PhoneXMLList
                 }
             }
 
-        public void PhonesName(string name)
+        public void PhonesName(string name)//тоже бред. ты должен был достать телефон по имени из конкретного файла 
+            //а не из списка телефоном, который есть у тебя заранее
         {
             foreach (Phone p in _phones)
             {
