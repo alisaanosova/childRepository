@@ -26,6 +26,7 @@ namespace PhoneXMLList
             phone.Add(new Phone() {PhoneModel = "a66666", PhoneComp = "nokia", Price = 7000});
             list.AddPhoneList(phone);
             List<Phone> phonesList = list.ReadAll();
+            list.CopyList();
             Console.ReadKey();
         }
     }

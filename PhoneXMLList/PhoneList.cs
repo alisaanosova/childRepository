@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace PhoneXMLList
@@ -11,8 +12,9 @@ namespace PhoneXMLList
     {
         private readonly string _fileAdress;
         private readonly XDocument _phonesDocumentList;
-        private List<Phone> _phonesList = new List<Phone>();  
+        private readonly List<Phone> _phonesList = new List<Phone>();  
         private int i = 1;
+        private int copyID = 1;
         public PhoneXmlRepository(string fileAddress)
         {
             XDocument phonesDocumenList = XDocument.Load(fileAddress+".xml");
@@ -87,6 +89,19 @@ namespace PhoneXMLList
                 }
             }
             _phonesDocumentList.Save(_fileAdress+".xml");
+            
+        }
+
+        public void CleanTheList()
+        {
+            _phonesDocumentList.Root.RemoveAll();
+            _phonesDocumentList.Save(_fileAdress + ".xml");
+        }
+
+        public void CopyList()
+        {
+            _phonesDocumentList.Save(_fileAdress + copyID+".xml");
+            copyID++;
         }
     }
 }
