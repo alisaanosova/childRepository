@@ -1,32 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <items>
+  <phone name="a3310">
+    <company>nokia</company>
+    <price>4000</price>
+  </phone>
+  <phone name="a3310">
+    <company>nokia</company>
+    <price>4000</price>
+  </phone>
+  <phone name="a3310">
+    <company>nokia</company>
+    <price>4000</price>
+  </phone>
   <phone name="iphone5">
     <company>Apple</company>
     <price>4500</price>
-  </phone>
-  <phone name="galaxy">
-    <company>Samsung</company>
-    <price>5000</price>
-  </phone>
-  <phone name="galaxy">
-    <company>Samsung</company>
-    <price>6000</price>
-  </phone>
-  <phone name="galaxy">
-    <company>Samsung</company>
-    <price>6500</price>
-  </phone>
-  <phone name="galaxy">
-    <company>Samsung</company>
-    <price>6750</price>
-  </phone>
-  <phone name="galaxy">
-    <company>Samsung</company>
-    <price>6800</price>
-  </phone>
-  <phone name="galaxy">
-    <company>Samsung</company>
-    <price>7000</price>
   </phone>
   <phone name="galaxy">
     <company>Samsung</company>
@@ -35,5 +23,13 @@
   <phone name="k5">
     <company>Lenovo</company>
     <price>10000</price>
+  </phone>
+  <phone name="iphone6">
+    <company>Apple</company>
+    <price>6000</price>
+  </phone>
+  <phone name="iphone7">
+    <company>Apple</company>
+    <price>11000</price>
   </phone>
 </items>

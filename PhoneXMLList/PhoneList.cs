@@ -7,75 +7,81 @@ using System.Xml.Linq;
 
 namespace PhoneXMLList
 {
-    class PhoneList//надозови класс более внятно. должно нызыватсья что-то типа PhoneXMLRepository
+    class PhoneXmlRepository
     {
-        private List<Phone> _phones; // зачем ты создал здесь телефоны? ты должен вытягивать в каждом методе а не записывать их в память.
-        //вдруг в другой части кода тоже будут юзать такой класс и этот документ и у тебя будет несоответсвие данных
-            private readonly string _fileAdress;
-            public PhoneList(string fileAddress)
-            {
-                XDocument phone = new XDocument();
-                XElement phones = new XElement("items");
-                phone.Add(phones);
-               
-                _fileAdress = fileAddress; // это правильно, но зачем ты в конструкторе делаешь все остальное
-                
-                phone.Save(_fileAdress + ".xml");
-            }
-
-            public void PhonesAdd(List<Phone> phones)
-            {
-                _phones = phones;
-                XDocument xDoc = XDocument.Load(_fileAdress + ".xml");
-                XElement root = xDoc.Element("items");
-                foreach (Phone p in _phones)
-                {
-                    root.Add(new XElement("phone",
-                        new XAttribute("name", p.PhoneModel),
-                        new XElement("company", p.PhoneComp),
-                        new XElement("price", $"{p.Price}")));
-                }
-                xDoc.Save(_fileAdress + ".xml");
-            }
-
-            public void PhoneListShow() //полагаю этот метод просто для удобства? потому что в репозитории его быть не должно
-            {
-                XDocument xdoc = XDocument.Load(_fileAdress + ".xml");
-                foreach (XElement phoneElement in xdoc.Element("items").Elements("phone"))
-                {
-                    XAttribute nameAttribute = phoneElement.Attribute("name");
-                    XElement companyElement = phoneElement.Element("company");
-                    XElement priceElement = phoneElement.Element("price");
-
-                    if (nameAttribute != null && companyElement != null && priceElement != null)
-                    {
-                        Console.WriteLine("Phone Model: {0}", nameAttribute.Value);
-                        Console.WriteLine("Company: {0}", companyElement.Value);
-                        Console.WriteLine("Price: {0}", priceElement.Value);
-                    }
-                    Console.WriteLine();
-                }
-            }
-
-        public void PhonesName(string name)//тоже бред. ты должен был достать телефон по имени из конкретного файла 
-            //а не из списка телефоном, который есть у тебя заранее
+        private readonly string _fileAdress;
+        private readonly XDocument _phonesDocumentList;
+        private List<Phone> _phonesList = new List<Phone>();  
+        public PhoneXmlRepository(string fileAddress)
         {
-            foreach (Phone p in _phones)
-            {
-                if (p.PhoneModel == name)
-                    Console.WriteLine(p.PhoneComp);
-            }
+            XDocument phonesDocumenList = XDocument.Load(fileAddress+".xml");
+            _phonesDocumentList = phonesDocumenList;
+            _fileAdress = fileAddress; 
         }
 
-        public void PhonePrice(int price)
+
+        public List<Phone> ReadAll()
         {
-            int val = 0;
-            foreach (Phone p in _phones)
+            foreach (XElement phoneElement in _phonesDocumentList.Element("items").Elements("phone"))
             {
-                if (p.Price <= price)
-                    val = p.Price;
+                XAttribute nameAttribute = phoneElement.Attribute("name");
+                XElement companyElement = phoneElement.Element("company");
+                XElement priceElement = phoneElement.Element("price");
+
+                _phonesList.Add(new Phone() {PhoneModel = nameAttribute.Value, PhoneComp = companyElement.Value, Price = int.Parse(priceElement.Value)});
             }
-            Console.WriteLine(val);
+            return _phonesList;
         }
-   }
+        public void AddPhone(string phoneModel, string phoneCompany, int price)
+        {
+            XElement root = _phonesDocumentList.Element("items");
+                 root.Add(new XElement("phone",
+                    new XAttribute("name", phoneModel),
+                    new XElement("company", phoneCompany),
+                    new XElement("price", $"{price}")));
+            _phonesDocumentList.Save(_fileAdress + ".xml");
+        }
+
+        public void AddPhoneList(List<Phone> phoneList)
+        {
+            XElement root = _phonesDocumentList.Element("items");
+
+            foreach (Phone xe in phoneList)
+            {
+                root.Add(new XElement("phone",
+                    new XAttribute("name", xe.PhoneModel),
+                    new XElement("company", xe.PhoneComp),
+                    new XElement("price", $"{xe.Price}")));
+            }
+            _phonesDocumentList.Save(_fileAdress + ".xml");
+        }
+
+        public void RemovePhone(string phoneModel)
+        {
+            XElement root = _phonesDocumentList.Element("items");
+
+            foreach (XElement xe in root.Elements("phone").ToList())
+            {
+                if (xe.Attribute("name").Value == phoneModel)
+                {
+                    xe.Remove();
+                }
+            }
+            _phonesDocumentList.Save(_fileAdress+".xml");
+        }
+
+        public void RemoveCompany(string phoneCompany)
+        {
+            XElement root = _phonesDocumentList.Element("items");
+
+            foreach (XElement xe in root.Elements("phone").ToList())
+            {
+                if (xe.Element("company").Value == phoneCompany)
+                {
+                    xe.RemoveAll();
+                }
+            }
+            _phonesDocumentList.Save(_fileAdress+".xml");
+        }
+    }
 }
