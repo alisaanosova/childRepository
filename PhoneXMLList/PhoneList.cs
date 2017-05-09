@@ -12,6 +12,7 @@ namespace PhoneXMLList
         private readonly string _fileAdress;
         private readonly XDocument _phonesDocumentList;
         private List<Phone> _phonesList = new List<Phone>();  
+        private int i = 1;
         public PhoneXmlRepository(string fileAddress)
         {
             XDocument phonesDocumenList = XDocument.Load(fileAddress+".xml");
@@ -22,13 +23,15 @@ namespace PhoneXMLList
 
         public List<Phone> ReadAll()
         {
+            int i = 0;
             foreach (XElement phoneElement in _phonesDocumentList.Element("items").Elements("phone"))
             {
-                XAttribute nameAttribute = phoneElement.Attribute("name");
+                XAttribute idAttribute = phoneElement.Attribute("id");
+                XElement nameAttribute = phoneElement.Element("name");
                 XElement companyElement = phoneElement.Element("company");
                 XElement priceElement = phoneElement.Element("price");
-
-                _phonesList.Add(new Phone() {PhoneModel = nameAttribute.Value, PhoneComp = companyElement.Value, Price = int.Parse(priceElement.Value)});
+                i++;
+                _phonesList.Add(new Phone() {PhoneModel = nameAttribute.Value, PhoneComp = companyElement.Value, Price = int.Parse(priceElement.Value), id = int.Parse(idAttribute.Value)});
             }
             return _phonesList;
         }
@@ -36,7 +39,8 @@ namespace PhoneXMLList
         {
             XElement root = _phonesDocumentList.Element("items");
                  root.Add(new XElement("phone",
-                    new XAttribute("name", phoneModel),
+                    new XAttribute("id", i++), 
+                    new XElement("name", phoneModel),
                     new XElement("company", phoneCompany),
                     new XElement("price", $"{price}")));
             _phonesDocumentList.Save(_fileAdress + ".xml");
@@ -45,11 +49,12 @@ namespace PhoneXMLList
         public void AddPhoneList(List<Phone> phoneList)
         {
             XElement root = _phonesDocumentList.Element("items");
-
+            
             foreach (Phone xe in phoneList)
             {
                 root.Add(new XElement("phone",
-                    new XAttribute("name", xe.PhoneModel),
+                    new XAttribute("id", i++),
+                    new XElement("name", xe.PhoneModel),
                     new XElement("company", xe.PhoneComp),
                     new XElement("price", $"{xe.Price}")));
             }

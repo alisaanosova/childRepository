@@ -11,6 +11,7 @@ namespace PhoneXMLList
         public string PhoneModel { get; set; }
         public string PhoneComp { get; set; }
         public int Price { get; set; }
+        public int id { get; set; }
     }
     class Program
     {
@@ -18,15 +19,13 @@ namespace PhoneXMLList
         {
 
             PhoneXmlRepository list = new PhoneXmlRepository("SecondPhoneList");
-            List<Phone> phone1 = list.ReadAll();
             List<Phone> phone = new List<Phone>();
             phone.Add(new Phone() {PhoneModel = "a3333333", PhoneComp = "nokia", Price = 4000});
             phone.Add(new Phone() {PhoneModel = "a400000", PhoneComp = "nokia", Price = 5000});
             phone.Add(new Phone() {PhoneModel = "a55555555", PhoneComp = "nokia", Price = 6000});
             phone.Add(new Phone() {PhoneModel = "a66666", PhoneComp = "nokia", Price = 7000});
             list.AddPhoneList(phone);
-            list.AddPhone("b45333","nokia",1337);
-            list.ReadAll();
+            List<Phone> phonesList = list.ReadAll();
             Console.ReadKey();
         }
     }
