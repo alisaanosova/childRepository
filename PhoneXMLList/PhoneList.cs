@@ -11,6 +11,9 @@ namespace PhoneXMLList
     class PhoneXmlRepository
     {
         private readonly string _fileAdress;
+        private readonly XDocument _phonesDocumentList;//это тоже убрать в метод, потому что у тебя будет не корректная инфа при повторном использовании
+        private List<Phone> _phonesList = new List<Phone>();  //это надо убрать, сразу методе создавай лист и возвращай его, тебе не нужно проперти
+        private int i = 1;//зачем это?
         private readonly XDocument _phonesDocumentList;
         private readonly List<Phone> _phonesList = new List<Phone>();  
         private int i = 1;
@@ -24,7 +27,7 @@ namespace PhoneXMLList
 
 
         public List<Phone> ReadAll()
-        {
+        {//по сути тут надо сразу создать лист и вернуть его. нам не нужно создавать поле
             int i = 0;
             foreach (XElement phoneElement in _phonesDocumentList.Element("items").Elements("phone"))
             {
@@ -37,8 +40,11 @@ namespace PhoneXMLList
             }
             return _phonesList;
         }
-        public void AddPhone(string phoneModel, string phoneCompany, int price)
+        public void AddPhone(string phoneModel, string phoneCompany, int price)//передавай сюда сразу телефон
         {
+            //ага. теперь вижу зачем i видно что думал, тогда хвалю))). но это не совсем хороший вариант. **подумай почему
+            //да и по сути тебе не надо в этом классе знать сколько элементов там сейчас.
+            //можно считать что тебе уже подается корректная инфа и уникальность обеспечивается где-то раньше
             XElement root = _phonesDocumentList.Element("items");
                  root.Add(new XElement("phone",
                     new XAttribute("id", i++), 
@@ -63,7 +69,7 @@ namespace PhoneXMLList
             _phonesDocumentList.Save(_fileAdress + ".xml");
         }
 
-        public void RemovePhone(string phoneModel)
+        public void RemovePhone(string phoneModel)//тут тоже стоит писать наприер ремув бай нейм.ну или по какому параметру удаляешь
         {
             XElement root = _phonesDocumentList.Element("items");
 
