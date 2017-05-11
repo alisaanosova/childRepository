@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<items>
+ <phone id="0ed74e3f-4f8c-49c5-801a-5e8ba7c30eb1">
+    <name>a55555555</name>
+    <company>nokia</company>
+    <price>6000</price>
+  </phone>
+  <phone id="f7b08ded-5beb-41ec-aed1-4ff85ee848c6">
+    <name>a66666</name>
+    <company>nokia</company>
+    <price>7000</price>
+  </phone>
+  <phone id="95834b92-bd50-4f68-9fd9-5daf8d6791df">
+    <name>a66666</name>
+    <company>nokia</company>
+    <price>10000</price>
+  </phone>
+</items>

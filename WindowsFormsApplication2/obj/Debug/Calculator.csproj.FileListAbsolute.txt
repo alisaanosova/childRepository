@@ -1,1 +1,9 @@
 D:\new\childRepository\WindowsFormsApplication2\bin\Debug\Calculator.exe.config
+D:\new\childRepository\WindowsFormsApplication2\bin\Debug\Calculator.exe
+D:\new\childRepository\WindowsFormsApplication2\bin\Debug\Calculator.pdb
+D:\new\childRepository\WindowsFormsApplication2\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+D:\new\childRepository\WindowsFormsApplication2\obj\Debug\Calculator.Form1.resources
+D:\new\childRepository\WindowsFormsApplication2\obj\Debug\Calculator.Properties.Resources.resources
+D:\new\childRepository\WindowsFormsApplication2\obj\Debug\Calculator.csproj.GenerateResource.Cache
+D:\new\childRepository\WindowsFormsApplication2\obj\Debug\Calculator.exe
+D:\new\childRepository\WindowsFormsApplication2\obj\Debug\Calculator.pdb

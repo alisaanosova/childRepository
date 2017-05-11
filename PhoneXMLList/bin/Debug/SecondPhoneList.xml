@@ -1,43 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <items>
-  <phone id="1">
-    <name>a3333333</name>
-    <company>nokia</company>
-    <price>4000</price>
-  </phone>
-  <phone id="2">
+  <phone />
+  <phone id="96c59646-a430-44be-b25b-e1e24f967b18">
     <name>a400000</name>
     <company>nokia</company>
     <price>5000</price>
   </phone>
-  <phone id="3">
+  <phone id="880977c8-eb70-4e27-920d-e0e2cae20f48">
     <name>a55555555</name>
     <company>nokia</company>
     <price>6000</price>
   </phone>
-  <phone id="4">
+  <phone id="57b60aea-64f1-4e2f-aa5a-d27b4142f463">
     <name>a66666</name>
     <company>nokia</company>
     <price>7000</price>
   </phone>
-  <phone id="1">
-    <name>a3333333</name>
+  <phone id="10e07b6d-954a-4834-a92f-756dff1931dc">
+    <name>a66666</name>
     <company>nokia</company>
-    <price>4000</price>
+    <price>10000</price>
   </phone>
-  <phone id="2">
-    <name>a400000</name>
-    <company>nokia</company>
-    <price>5000</price>
-  </phone>
-  <phone id="3">
+  <phone id="0ed74e3f-4f8c-49c5-801a-5e8ba7c30eb1">
     <name>a55555555</name>
     <company>nokia</company>
     <price>6000</price>
   </phone>
-  <phone id="4">
+  <phone id="f7b08ded-5beb-41ec-aed1-4ff85ee848c6">
     <name>a66666</name>
     <company>nokia</company>
     <price>7000</price>
+  </phone>
+  <phone id="95834b92-bd50-4f68-9fd9-5daf8d6791df">
+    <name>a66666</name>
+    <company>nokia</company>
+    <price>10000</price>
   </phone>
 </items>
