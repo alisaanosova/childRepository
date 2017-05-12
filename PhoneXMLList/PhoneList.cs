@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace PhoneXMLList
 {
-    class PhoneXmlRepository
+    class PhoneXmlRepository : IPhoneList
     {
         private readonly string _fileAdress;
         private int copyID = 1;
