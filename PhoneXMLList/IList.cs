@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhoneXMLList
 {
-    interface IPhoneList
+    interface IList
     {
         List<Phone> ReadAll();
         void AddPhone(Phone T);
